@@ -1,0 +1,84 @@
+<!-- 
+    I used online resorces/code for this project.
+ -->
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <title>Weather</title>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+
+  <link rel="shortcut icon" href="https://img.icons8.com/office/16/000000/sunset--v2.png" type="image/x-icon" />
+  <link href="https://fonts.googleapis.com/css?family=Open+Sans:300" rel="stylesheet" type="text/css" />
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous" />
+</head>
+
+<body>
+  <div class="container">
+
+    <fieldset>
+      <form name="post_form" action="/" method="post">
+        <input name="city_name" type="text" class="ghost-input" placeholder="Enter a City 'London'" required>
+        <input type="submit" class="ghost-button" value="Get Weather">
+      </form>
+
+      <%if( weather !== null){ %>
+      <div class="grid">
+        <p>
+          <%= location %>
+        </p>
+      </div>
+
+      <div class="card-deck">
+        <div class="card card-accent-dark mb-3" style="max-width: 18rem;">
+          <div class="card-header">Summary</div>
+          <div class="card-body text-dark">
+            <img src="<%= icon %>" alt="Weather-Icon">
+            <h5 class="card-title">Temperature</h5>
+            <p class="card-text">
+              <%= temp %>°C/
+              <%= fahrenheit %>°F
+            </p>
+            <h5 class="card-title">Main</h5>
+            <p class="card-text">
+              <%= main %>
+            </p>
+          </div>
+        </div>
+        <div class="card-deck">
+          <div class="card card-acTomorrowcent-dark mb-3" style="max-width: 18rem;">
+            <div class="card-header">Description</div>
+            <div class="card-body text-dark">
+              <h5 class="card-title">Description: </h5>
+              <p class="card-text">
+                <%= description %>
+              </p>
+              <h5 class="card-title">Cloud coverage: </h5>
+              <p class="card-text">
+                <%= clouds %>%
+              </p>
+              <h5 class="card-title">Visibility: </h5>
+              <p class="card-text">
+                <%= visibility %> meters
+              </p>
+            </div>
+          </div>
+          <% } %>
+
+          <% if(error !== null){ %>
+          <p>
+            <%= error %>
+          </p>
+          <% } %>
+    </fieldset>
+  </div>
+
+  <script src="https://code.jquery.com/jquery-3.6.0.slim.js" integrity="sha256-HwWONEZrpuoh951cQD1ov2HUK5zA5DwJ1DNUXaM6FsY=" crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/2.11.2/umd/popper.min.js" crossorigin="anonymous"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+
+</body>
+
+</html>
